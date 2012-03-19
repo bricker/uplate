@@ -1,4 +1,5 @@
 class Photo < ActiveRecord::Base
+  # HEROKU
   production = Rails.env == 'production'
   asset_path = production ? ":attachment" : "#{Rails.root}/public/:attachment/#{Rails.env}"
   has_attached_file :asset,

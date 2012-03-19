@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
-  require 'digest/sha1'
-  
+  require 'bcrypt'
+    
   def create
-    if Digest::SHA1.hexdigest(params[:username]) == USERNAME and Digest::SHA1.hexdigest(params[:password]) == PASSWORD
+    if BCrypt::Password.new(USERNAME) == params[:username] and BCrypt::Password.new(PASSWORD) == params[:password]
       cookies.permanent[:auth_token] = AppConfig["auth_token"]
       redirect_to root_path, notice: 'Logged in.'
     else
@@ -17,5 +17,5 @@ class SessionsController < ApplicationController
   
   private
     USERNAME = AppConfig["admin_username"]
-    PASSWORD = AppConfig["admin_pasword"]
+    PASSWORD = AppConfig["admin_password"]
 end
