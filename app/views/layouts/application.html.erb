@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= @page_title || "Up Late with Adam Fisher" %></title>
+  	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "application" %>
+  	<%= csrf_meta_tags %>
+	<link rel="shortcut icon" href="favicon.ico" />
+	<%= yield :head %>
+</head>
+<body>
+	<div id="main">
+		<div id="header">
+			<nav id="nav">
+				<%= link_to "This Week", root_path %>
+				<%= link_to "Clips", clips_path %><br /><br />
+				<%= link_to 'Photos', photos_path %>
+				<%= link_to raw("Tickets &amp; Info"), tickets_path %>
+			</nav>
+		</div>
+
+		<div class="top-info">
+			<% unless flash.empty? %>
+			  <div id="flash">
+			    <% flash.each do |name, msg| %>
+			      <div class="<%= name %>"><%= msg %></div>
+			    <% end %>
+			  </div>
+			<% end %>
+			
+			<% if logged_in? %>
+				<div class="admin"><!--
+					--><%= link_to 'manage contents', edit_contents_path %><!--
+					--><%= link_to 'add clip', new_clip_path %><!--
+					--><%= link_to 'add photo', new_photo_path %><!--
+					--><%= link_to 'logout', logout_path %><!--
+				--></div>
+			<% end %>
+		</div>
+		
+		<div id="content">
+			<%= yield %>
+		</div>
+		
+		<div id="adam">
+			&nbsp;
+		</div>
+	</div> <!-- #main -->
+</body>
+</html>

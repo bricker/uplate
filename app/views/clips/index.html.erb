@@ -1,0 +1,13 @@
+<h2>Video Clips</h2>
+
+<% for clip in @clips do %>
+	<div class="clip">
+		<h3><%= clip.title %></h3>
+		<div class="video"><%= raw clip.video_embed_code || "No Video Available" %></div>
+		<div class="description"><%= clip.description %></div>
+		<%= edit_link edit_clip_path(clip) %>
+	</div>
+<% end %>
+
+<%= paginate @clips %>
+<%= no_records_check @clips, "Video Clips" %>

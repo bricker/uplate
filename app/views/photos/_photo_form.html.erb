@@ -1,0 +1,19 @@
+<%= form_for photo, html: { multipart: true } do |f| %>
+  <%= check_for_errors photo %>
+  <fieldset>
+	<legend><%= title %></legend>
+	<ol>
+		<li>
+			<%= f.label :asset, "File" %>
+			<%= photo.new_record? ? f.file_field(:asset) : image_tag(photo.asset.url(:thumb)) %>
+		</li>
+		<li>
+			<%= f.label :caption %>
+			<%= f.text_field :caption %>
+		</li>
+	</ol>
+  </fieldset>
+  <fieldset>
+    <%= f.submit title %>
+  </fieldset>
+<% end %>

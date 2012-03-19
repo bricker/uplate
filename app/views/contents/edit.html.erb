@@ -1,0 +1,15 @@
+<%= form_tag update_contents_path, method: :put, class: "big" do %>
+	<legend>Edit Contents</legend>
+	<% @contents.each do |content| %>
+		<%= check_for_errors content, object_name: "content" %>
+		<fieldset class="content-fields">
+			<%= fields_for "contents[]", content do |f| %>
+				<h2><%= content.title.titleize %></h2>
+				<%= f.text_area :content, size: "50x6", class: %w{promo_about tickets}.include?(content.title) ? 'ckeditor' : nil %>
+			<% end %>
+		</fieldset>
+	<% end %>
+  <fieldset>
+    <%= submit_tag "Update Contents" %>
+  </fieldset>
+<% end %>
