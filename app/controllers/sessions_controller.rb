@@ -8,8 +8,6 @@ class SessionsController < ApplicationController
     else
       redirect_to login_path, alert: "Wrong info."
     end
-    rescue
-      redirect_to root_path, alert: "There's an error - please tell Bryan, he will fix it."
   end
   
   def destroy
