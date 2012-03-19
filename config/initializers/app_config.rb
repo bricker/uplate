@@ -1,2 +1,2 @@
 # HEROKU
-AppConfig = Rails.env == "production" ? ENV : YAML.load_file("#{Rails.root}/config/secrets.yml")[Rails.env]
+AppConfig = Rails.env == "production" ? ENV : YAML.load_file("#{Rails.root}/config/secrets.yml")

@@ -6,7 +6,7 @@ gem 'kaminari'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'ckeditor_rails', :require => 'ckeditor-rails'
-gem 'bcrypt-ruby'
+# gem 'bcrypt-ruby'
 
 # HEROKU
 group :production do

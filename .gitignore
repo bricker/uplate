@@ -1,6 +1,8 @@
 .bundle
 .rspec
 .rvmrc
+.irb-history
+rerun.txt
 db/*.sqlite3
 log/*.log
 tmp/
