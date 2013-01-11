@@ -1,10 +1,10 @@
 <h2>Photos</h2>
 <% for photo in @photos do %>
-	<div class="photo">
-		<%= link_to image_tag(photo.asset.url(:thumb)), photo.asset.url(:display), class: 'lightbox', title: photo.caption %>
-		<div class="caption"><%= photo.caption %></div>
-		<%= edit_link edit_photo_path photo%>
-	</div>
+  <div class="photo">
+    <%= link_to image_tag(photo.asset.url(:thumb)), photo.asset.url(:display), class: 'lightbox', title: photo.caption %>
+    <div class="caption"><%= photo.caption %></div>
+    <%= edit_link edit_photo_path photo%>
+  </div>
 <% end %>
 
 <%= no_records_check @photos, "Photos" %>

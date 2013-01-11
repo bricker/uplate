@@ -1,23 +1,23 @@
 <%= form_for clip do |f| %>
   <%= check_for_errors clip %>
   <fieldset>
-	<legend><%= title %></legend>
-	<ol>
-		<li>
-			<%= f.label :title %>
-			<%= f.text_field :title %>
-		</li>
-		
-		<li>
-			<%= f.label :video_embed_code %>
-			<%= f.text_area :video_embed_code, size: '40x6' %>
-		</li>
+  <legend><%= title %></legend>
+  <ol>
+    <li>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </li>
+    
+    <li>
+      <%= f.label :video_embed_code %>
+      <%= f.text_area :video_embed_code, size: '40x6' %>
+    </li>
 
-		<li>
-			<%= f.label :description %>
-			<%= f.text_area :description, size: "40x6" %>
-		</li>
-	</ol>
+    <li>
+      <%= f.label :description %>
+      <%= f.text_area :description, size: "40x6" %>
+    </li>
+  </ol>
   </fieldset>
   <fieldset>
     <%= f.submit %>
