@@ -3,8 +3,8 @@ source 'http://rubygems.org'
 gem 'rails'
 gem 'jquery-rails'
 gem 'kaminari'
-gem 'paperclip'
-gem 'aws-sdk'
+gem 'paperclip', "~> 2.7.0"
+gem 'aws-sdk', "~> 1.3.6"
 gem 'ckeditor_rails', :require => 'ckeditor-rails'
 # gem 'bcrypt-ruby'
 
