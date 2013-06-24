@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Content.create title: "promo_video_embed_code"
+Content.create title: "homepage_header"
 Content.create title: "promo_header"
 Content.create title: "promo_about"
 Content.create title: "tickets"

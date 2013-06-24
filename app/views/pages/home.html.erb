@@ -1,6 +1,6 @@
-<h2>Fridays @ 10:30pm at ComedySportzLA!</h2>
-<h3><%= @promo_header || "Up Late with Adam Fisher!" %><span class="spacer">&nbsp;</span><a href="https://twitter.com/share" class="twitter-share-button" data-text="<%=@promo_header || 'Up Late with Adam'%>" data-url="http://UpLateWithAdam.com" data-via="UpLateWithAdam">Tweet</a></h3>
-<div class="video"><%= raw(@promo_video_embed_code) || "Visit YouTube to see our promotional videos." %> </div>
-<div class="promo-about"><%= (@promo_about || "Fridays @ 10:30pm").html_safe %></div>
+<h2><%= @homepage_header %></h2>
+<h3><%= @promo_header %><span class="spacer">&nbsp;</span><a href="https://twitter.com/share" class="twitter-share-button" data-text="<%=@promo_header%>" data-url="http://UpLateWithAdam.com" data-via="UpLateWithAdam">Tweet</a></h3>
+<div class="video"><%= @promo_video_embed_code.html_safe %> </div>
+<div class="promo-about"><%= @promo_about.html_safe %></div>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
